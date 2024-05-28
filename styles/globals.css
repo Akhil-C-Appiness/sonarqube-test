@@ -1,0 +1,251 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 240, 1%, 34%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 206, 78%, 53%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 206, 78%, 53%;
+
+    --primary: 206, 78%, 53%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 206, 78%, 53%;
+
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 206, 78%, 53%;
+
+    --destructive: 0 100% 50%;
+    --destructive-foreground: 210 40% 98%;
+
+    --ring: 206, 78%, 53%;
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 224 71% 4%;
+    --foreground: 213 31% 91%;
+
+    --muted: 223 47% 11%;
+    --muted-foreground: 215.4 16.3% 56.9%;
+
+    --accent: 216 34% 17%;
+    --accent-foreground: 210 40% 98%;
+
+    --popover: 224 71% 4%;
+    --popover-foreground: 215 20.2% 65.1%;
+
+    --border: 216 34% 17%;
+    --input: 216 34% 17%;
+
+    --card: 224 71% 4%;
+    --card-foreground: 213 31% 91%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 1.2%;
+
+    --secondary: 206, 78%, 53%;
+    --secondary-foreground: 210 40% 98%;
+
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 210 40% 98%;
+
+    --ring: 216 34% 17%;
+
+    --radius: 0.5rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+/* styles for timepicker*/
+.Sample input,
+.Sample button {
+  font: inherit;
+}
+
+.Sample header {
+  background-color: #323639;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
+  padding: 20px;
+  color: white;
+}
+
+.Sample header h1 {
+  font-size: inherit;
+  margin: 0;
+}
+
+.Sample__container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  margin: 10px 0;
+  padding: 10px;
+}
+
+.Sample__container > * > * {
+  margin: 10px;
+}
+
+.Sample__container__content {
+  display: flex;
+  max-width: 100%;
+  flex-basis: 420px;
+  flex-direction: column;
+  flex-grow: 100;
+  align-items: stretch;
+}
+.my-timerange-picker .react-timerange-picker__input {
+   background-color: #f0f0f0;
+   color: #333;
+  }
+  
+  .my-timerange-picker .react-timerange-picker__dropdown {
+   border-color: #333;
+  }
+  .react-timerange-picker__wrapper{
+    display: grid;
+    grid-template-columns: 1.6fr 0.4fr 2fr;
+  }
+  .react-timerange-picker__inputGroup__hour, .react-timerange-picker__inputGroup__minute{
+    min-width: 40px !important;
+  }
+  .react-timerange-picker__inputGroup__leadingZero, .react-timerange-picker__clear-button__icon, .react-timerange-picker__clock-button__icon{
+    display: none;
+  }
+  .react-time-picker__inputGroup__divider, .react-timerange-picker__range-divider{
+    width: 15px;
+    display: inline-block;
+    text-align: center;
+  }
+  .react-timerange-picker__inputGroup__input{
+    border: 1px solid #3598e4;
+    padding: 2px;
+    border-radius: 3px;
+    /* margin-right: 5px; */
+  }
+
+/* Magnifier.css */
+
+.magnifier-container {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+}
+
+.magnifier-container img {
+  width: 100%;
+  height: auto;
+}
+
+.magnifier-lens {
+  position: absolute;
+  border: 1px solid #000;
+  border-radius: 50%;
+  width: 200px;
+  height: 200px;
+  visibility: hidden;
+  background-repeat: no-repeat;
+  pointer-events: none;
+  transform: scale(1.1); /* Increase this value for more zoom */
+}
+
+
+
+.slider {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 25px;
+  background: linear-gradient(to right, #000 0%, #000 100%);
+  outline: none;
+  opacity: 0.7;
+  transition: opacity .2s;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 25px;
+  height: 25px;
+  background: #4CAF50;
+  cursor: pointer;
+}
+
+.slider::-webkit-slider-runnable-track {
+  -webkit-appearance: none;
+  height: 25px;
+  cursor: pointer;
+  border-radius: 1.3em;
+  background: linear-gradient(to right, #000 0%, #000 50%, #fff 50%, #fff 100%);
+}
+
+
+
+.vis-current-time {
+  background-color: #2894E4 !important;
+  position: relative !important;
+}
+
+.vis-current-time::before,
+.vis-current-time::after {
+  content: "";
+  position: absolute;
+  border-width: 10px;
+  border-style: solid;
+}
+
+.vis-current-time::before {
+  top: 0;
+  left:-9px; 
+  border-color: #2894E4 transparent transparent transparent;
+}
+
+.vis-current-time::after {
+  bottom: 0px;
+  left:-9px;
+  border-color: transparent transparent #2894E4 transparent;
+  display: none;
+}
+
+
+.vis-text {
+  color: #747474 !important;
+  font-size: 12px;
+}
+
+.vis-item.vis-background {
+  background-color: rgba(26, 125, 224, 0.375) !important;
+}
+
+.vis-bottom {
+  border-bottom: 1px solid #2894E4 !important;
+}
+
+.eventLoader > div:first-child{
+  margin-top: 0;
+}
+.eventSpinner > div:first-child{
+  height: 13.5rem;
+}
